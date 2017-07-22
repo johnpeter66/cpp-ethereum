@@ -382,9 +382,9 @@ public:
 			}
 		else if (arg == "-C" || arg == "--cpu")
 			m_minerType = MinerType::CPU;
-		else if (arg == "-G" || arg == "--opencl")
+		else if (arg == "-U" || arg == "--opencl")
 			m_minerType = MinerType::CL;
-		else if (arg == "-U" || arg == "--cuda")
+		else if (arg == "-G" || arg == "--cuda")
 		{
 			m_minerType = MinerType::CUDA;
 		}
