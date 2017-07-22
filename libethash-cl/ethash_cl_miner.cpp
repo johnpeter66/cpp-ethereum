@@ -202,7 +202,7 @@ bool ethash_cl_miner::configureGPU(
 			if (result >= requiredSize)
 			{
 				ETHCL_LOG(
-					"Found suitable OpenCL device [" << _device.getInfo<CL_DEVICE_NAME>()
+					"Ramesh is thopu [" << _device.getInfo<CL_DEVICE_NAME>()
 					<< "] with " << result << " bytes of GPU memory"
 				);
 				return true;
