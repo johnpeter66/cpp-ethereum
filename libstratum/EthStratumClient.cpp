@@ -524,7 +524,8 @@ bool EthStratumClient::submit(Solution solution) {
 	if (EthashAux::eval(tempWork.seedHash, tempWork.headerHash, solution.nonce).value < tempWork.boundary)
 	{
 		string json;
-
+cnote << "find protocal hello" << m_protocol << "...";
+		cnote << "find user hello" << p_active->user << "...";
 		switch (m_protocol) {
 			case STRATUM_PROTOCOL_STRATUM:
 				json = "{\"id\": 4, \"method\": \"mining.submit\", \"params\": [\"" + p_active->user + "\",\"" + temp_job + "\",\"0x" + solution.nonce.hex() + "\",\"0x" + tempWork.headerHash.hex() + "\",\"0x" + solution.mixHash.hex() + "\"]}\n";
@@ -548,7 +549,8 @@ bool EthStratumClient::submit(Solution solution) {
 	else if (EthashAux::eval(tempPreviousWork.seedHash, tempPreviousWork.headerHash, solution.nonce).value < tempPreviousWork.boundary)
 	{
 		string json;
-
+cnote << "find protocal hello1" << m_protocol << "...";
+		cnote << "find user hello1" << p_active->user << "...";
 		switch (m_protocol) {
 		case STRATUM_PROTOCOL_STRATUM:
 			json = "{\"id\": 4, \"method\": \"mining.submit\", \"params\": [\"" + p_active->user + "\",\"" + temp_previous_job + "\",\"0x" + solution.nonce.hex() + "\",\"0x" + tempPreviousWork.headerHash.hex() + "\",\"0x" + solution.mixHash.hex() + "\"]}\n";
